@@ -46,11 +46,17 @@ namespace addin
         {
             if (App is ISldWorks swApp)
             {
-                var macroPath = @"C:\Path\To\Your\Macro.swp"; // Update with your macro path
+                var macroPath = @"E:\Desktop\BTP\macros\codestackSlicingmacroOG.swp"; // Update with your macro path
 
                 if (System.IO.File.Exists(macroPath))
                 {
-                    swApp.RunMacro2(macroPath, "", "main", 0, );
+                    int macroError;
+                    swApp.RunMacro2(macroPath, "", "main", (int)swRunMacroOption_e.swRunMacroDefault, out macroError);
+
+                    if (macroError != 0)
+                    {
+                        throw new Exception($"Macro execution failed with error code: {macroError}");
+                    }
                 }
                 else
                 {
@@ -62,8 +68,6 @@ namespace addin
                 throw new Exception("Failed to retrieve SolidWorks application object");
             }
         }
-
-
 
     }
 }
