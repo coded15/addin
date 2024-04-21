@@ -1,9 +1,13 @@
-﻿using CodeStack.SwEx.AddIn;
+﻿using addin.Properties;
+using CodeStack.SwEx.AddIn;
 using CodeStack.SwEx.AddIn.Attributes;
+using CodeStack.SwEx.AddIn.Enums;
+using CodeStack.SwEx.Common.Attributes;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -15,8 +19,15 @@ namespace addin
     [AutoRegister("Slicing", "Generates Slices")] //automatically registers solidworks addin in the registry, it could be recognized and loaded automatically
     public class AddIn : SwAddInEx
     {
+        [Title("Slicing")]
+        [Description("Generates Slices")]
+        [Icon(typeof(Resources), nameof(Resources.slices))]
         private enum Commands_e
         {
+            [Title("Slicing")]
+            [Description("Generates Slices")]
+            [Icon(typeof(Resources), nameof(Resources.slices))]
+            [CommandItemInfo(true, true, swWorkspaceTypes_e.Part, true)]
             GenerateSlices
         }
 
