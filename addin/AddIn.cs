@@ -62,7 +62,7 @@ namespace addin
         {
             if (App is ISldWorks swApp)
             {
-                var macroPath = @"E:\Desktop\BTP\macros\codestackSlicingmacroOG.swp"; // Update with your macro path
+                var macroPath = @"E:\Desktop\BTP\macros\SlicingmacroOG.swp"; // Update with your macro path
 
                 if (System.IO.File.Exists(macroPath))
                 {
