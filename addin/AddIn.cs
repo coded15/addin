@@ -1,4 +1,9 @@
-﻿using addin.Properties;
+﻿//**********************
+//Code developed by Ichchha Gupta
+//last commit : 19-04-24, 5:31PM
+//**********************
+
+using addin.Properties;
 using CodeStack.SwEx.AddIn;
 using CodeStack.SwEx.AddIn.Attributes;
 using CodeStack.SwEx.AddIn.Enums;
